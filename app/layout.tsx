@@ -16,6 +16,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "KIM Nattanan",
   description: "kimchi?",
+  icons:{
+    icon: "/favicon.ico",
+    apple: "/favicon.ico",
+  }
 };
 
 export default function RootLayout({
