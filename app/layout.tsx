@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description: "kimchi?",
   openGraph: {
     images: [
-      '/favticon.png',
+      '/favicon.png',
     ]
   },
 };
