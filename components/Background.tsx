@@ -32,8 +32,8 @@ function Tile(){
   );
 }
 
+extend({ TilingSprite });
 export default function Background(){
-  extend({ TilingSprite });
   const parentRef = useRef<HTMLDivElement>(null);
   return (
     <div ref={parentRef} className='w-full h-full'>

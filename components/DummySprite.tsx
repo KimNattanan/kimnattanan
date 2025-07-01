@@ -70,16 +70,15 @@ function Dummy({parentRef} : {parentRef: React.RefObject<HTMLDivElement|null>}){
     }
   });
 
-  const mouseDown = (e: FederatedPointerEvent) => {
+  const mouseDown = useCallback((e: FederatedPointerEvent) => {
     setDragging(true);
     setMouseDx(e.globalX - curX);
     setMouseDy(e.globalY - curY);
-    console.log(e.globalX, e.globalY, curX, curY);
-  };
-  const mouseUp = () => {
+  },[]);
+  const mouseUp = useCallback(() => {
     setDragging(false);
-  }
-  const mouseMove = (e: FederatedPointerEvent) => {
+  },[]);
+  const mouseMove = useCallback((e: FederatedPointerEvent) => {
     if(!dragging) return;
     const newX = e.globalX - mouseDx;
     const newY = e.globalY - mouseDy;
@@ -89,7 +88,7 @@ function Dummy({parentRef} : {parentRef: React.RefObject<HTMLDivElement|null>}){
     if(newY <= floorY){
       setCurY(newY);
     }
-  }
+  },[]);
 
   return (
     <pixiSprite
@@ -109,8 +108,8 @@ function Dummy({parentRef} : {parentRef: React.RefObject<HTMLDivElement|null>}){
   );
 }
 
+extend({ Sprite });
 export default function DummySprite(){
-  extend({ Sprite });
   const parentRef = useRef<HTMLDivElement>(null);
   return (
     <div ref={parentRef} className='w-full h-full'>
