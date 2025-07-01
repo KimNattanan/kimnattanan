@@ -1,9 +1,9 @@
 'use client'
 import { Application, extend, useTick } from '@pixi/react';
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { Texture, Assets, Sprite } from 'pixi.js';
+import { Texture, Assets, Sprite, FederatedPointerEvent } from 'pixi.js';
 
-function Dummy(){
+function Dummy({parentRef} : {parentRef: React.RefObject<HTMLDivElement|null>}){
   const [fallAnim, setFallAnim] = useState(Texture.EMPTY);
   const [idleAnim, setIdleAnim] = useState(Texture.EMPTY);
   const [curAnim, setCurAnim] = useState(Texture.EMPTY);
@@ -11,6 +11,9 @@ function Dummy(){
   const [curX, setCurX] = useState(0);
   const [curY, setCurY] = useState(0);
   const [velo, setVelo] = useState(0);
+  const [dragging, setDragging] = useState(false);
+  const [mouseDx, setMouseDx] = useState(0);
+  const [mouseDy, setMouseDy] = useState(0);
   useEffect(() => {
     if (fallAnim === Texture.EMPTY) {
       Assets.load('/fall_anim.png').then((res) => {
@@ -42,6 +45,11 @@ function Dummy(){
   }, []);
 
   useTick(time=>{
+    if(dragging){
+      if(curAnim !== fallAnim) setCurAnim(fallAnim);
+      if(velo!=0) setVelo(0);
+      return;
+    }
     const dt = time.deltaTime;
     if(curY>floorY){
       setCurY(floorY);
@@ -62,6 +70,27 @@ function Dummy(){
     }
   });
 
+  const mouseDown = (e: FederatedPointerEvent) => {
+    setDragging(true);
+    setMouseDx(e.globalX - curX);
+    setMouseDy(e.globalY - curY);
+    console.log(e.globalX, e.globalY, curX, curY);
+  };
+  const mouseUp = () => {
+    setDragging(false);
+  }
+  const mouseMove = (e: FederatedPointerEvent) => {
+    if(!dragging) return;
+    const newX = e.globalX - mouseDx;
+    const newY = e.globalY - mouseDy;
+    if(newX >= 100 && (parentRef == null || newX < parentRef.current!.clientWidth - 100)){
+      setCurX(newX);
+    }
+    if(newY <= floorY){
+      setCurY(newY);
+    }
+  }
+
   return (
     <pixiSprite
       texture={curAnim}
@@ -70,6 +99,12 @@ function Dummy(){
       height={200}
       anchor={{ x: 0.5, y: 1 }}
       position={{x:curX,y:curY}}
+      eventMode='static'
+      cursor='pointer'
+      onMouseDown={mouseDown}
+      onMouseUp={mouseUp}
+      onMouseMove={mouseMove}
+      onMouseLeave={mouseUp}
     />
   );
 }
@@ -83,7 +118,7 @@ export default function DummySprite(){
         backgroundAlpha={0}
         resizeTo={parentRef}
       >
-        <Dummy />
+        <Dummy parentRef={parentRef} />
       </Application>
     </div>
   );
