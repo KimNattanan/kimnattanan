@@ -70,15 +70,15 @@ function Dummy({parentRef} : {parentRef: React.RefObject<HTMLDivElement|null>}){
     }
   });
 
-  const mouseDown = useCallback((e: FederatedPointerEvent) => {
+  const mouseDown = (e: FederatedPointerEvent) => {
     setDragging(true);
     setMouseDx(e.globalX - curX);
     setMouseDy(e.globalY - curY);
-  },[]);
+  };
   const mouseUp = useCallback(() => {
     setDragging(false);
   },[]);
-  const mouseMove = useCallback((e: FederatedPointerEvent) => {
+  const mouseMove = (e: FederatedPointerEvent) => {
     if(!dragging) return;
     const newX = e.globalX - mouseDx;
     const newY = e.globalY - mouseDy;
@@ -88,7 +88,7 @@ function Dummy({parentRef} : {parentRef: React.RefObject<HTMLDivElement|null>}){
     if(newY <= floorY){
       setCurY(newY);
     }
-  },[]);
+  };
 
   return (
     <pixiSprite
