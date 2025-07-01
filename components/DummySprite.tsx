@@ -3,7 +3,10 @@ import { Application, extend, useTick } from '@pixi/react';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Texture, Assets, Sprite, FederatedPointerEvent } from 'pixi.js';
 
-function Dummy({parentRef} : {parentRef: React.RefObject<HTMLDivElement|null>}){
+function Dummy(
+  {parentRef, mouseX, mouseY} :
+  {parentRef: React.RefObject<HTMLDivElement|null>, mouseX: number, mouseY: number}
+){
   const [fallAnim, setFallAnim] = useState(Texture.EMPTY);
   const [idleAnim, setIdleAnim] = useState(Texture.EMPTY);
   const [curAnim, setCurAnim] = useState(Texture.EMPTY);
@@ -12,8 +15,8 @@ function Dummy({parentRef} : {parentRef: React.RefObject<HTMLDivElement|null>}){
   const [curY, setCurY] = useState(0);
   const [velo, setVelo] = useState(0);
   const [dragging, setDragging] = useState(false);
-  const [mouseDx, setMouseDx] = useState(0);
-  const [mouseDy, setMouseDy] = useState(0);
+  const [pivotX, setPivotX] = useState(0);
+  const [pivotY, setPivotY] = useState(0);
   useEffect(() => {
     if (fallAnim === Texture.EMPTY) {
       Assets.load('/fall_anim.png').then((res) => {
@@ -36,6 +39,7 @@ function Dummy({parentRef} : {parentRef: React.RefObject<HTMLDivElement|null>}){
 
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
+    window.addEventListener("mouseup", mouseUp);
     setFloorY(window.scrollY + window.innerHeight);
     setCurY(floorY);
     setCurX(window.innerWidth-200);
@@ -72,23 +76,23 @@ function Dummy({parentRef} : {parentRef: React.RefObject<HTMLDivElement|null>}){
 
   const mouseDown = (e: FederatedPointerEvent) => {
     setDragging(true);
-    setMouseDx(e.globalX - curX);
-    setMouseDy(e.globalY - curY);
+    setPivotX(e.globalX - curX);
+    setPivotY(e.globalY - curY);
   };
   const mouseUp = useCallback(() => {
     setDragging(false);
   },[]);
-  const mouseMove = (e: FederatedPointerEvent) => {
+  useEffect(()=>{
     if(!dragging) return;
-    const newX = e.globalX - mouseDx;
-    const newY = e.globalY - mouseDy;
+    const newX = mouseX - pivotX;
+    const newY = mouseY - pivotY;
     if(newX >= 100 && (parentRef == null || newX < parentRef.current!.clientWidth - 100)){
       setCurX(newX);
     }
-    if(newY <= floorY){
+    if(newY>=200 && newY <= floorY){
       setCurY(newY);
     }
-  };
+  },[mouseX,mouseY]);
 
   return (
     <pixiSprite
@@ -97,13 +101,10 @@ function Dummy({parentRef} : {parentRef: React.RefObject<HTMLDivElement|null>}){
       width={200}
       height={200}
       anchor={{ x: 0.5, y: 1 }}
-      position={{x:curX,y:curY}}
       eventMode='static'
+      position={{x:curX,y:curY}}
       cursor='pointer'
       onMouseDown={mouseDown}
-      onMouseUp={mouseUp}
-      onMouseMove={mouseMove}
-      onMouseLeave={mouseUp}
     />
   );
 }
@@ -111,13 +112,19 @@ function Dummy({parentRef} : {parentRef: React.RefObject<HTMLDivElement|null>}){
 extend({ Sprite });
 export default function DummySprite(){
   const parentRef = useRef<HTMLDivElement>(null);
+  const [mouseX,setMouseX] = useState(0);
+  const [mouseY,setMouseY] = useState(0);
   return (
-    <div ref={parentRef} className='w-full h-full'>
+    <div ref={parentRef} className='w-full h-full' onMouseMove={(e)=>{
+      setMouseX(e.pageX);
+      setMouseY(e.pageY);
+    }}>
       <Application
         backgroundAlpha={0}
         resizeTo={parentRef}
+        eventMode='auto'
       >
-        <Dummy parentRef={parentRef} />
+        <Dummy parentRef={parentRef} mouseX={mouseX} mouseY={mouseY} />
       </Application>
     </div>
   );
