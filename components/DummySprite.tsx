@@ -40,6 +40,7 @@ function Dummy(
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
     window.addEventListener("mouseup", mouseUp);
+    window.addEventListener("touchend", mouseUp);
     setFloorY(window.scrollY + window.innerHeight);
     setCurY(floorY);
     setCurX(window.innerWidth-200);
@@ -105,6 +106,7 @@ function Dummy(
       position={{x:curX,y:curY}}
       cursor='pointer'
       onMouseDown={mouseDown}
+      onTouchStart={mouseDown}
     />
   );
 }
@@ -115,10 +117,20 @@ export default function DummySprite(){
   const [mouseX,setMouseX] = useState(0);
   const [mouseY,setMouseY] = useState(0);
   return (
-    <div ref={parentRef} className='w-full h-full' onMouseMove={(e)=>{
-      setMouseX(e.pageX);
-      setMouseY(e.pageY);
-    }}>
+    <div
+      ref={parentRef}
+      className='w-full h-full'
+      onMouseMove={(e)=>{
+        setMouseX(e.pageX);
+        setMouseY(e.pageY);
+      }}
+      onTouchMove={(e)=>{
+        if(e.touches.length > 0){
+          setMouseX(e.touches[0].pageX);
+          setMouseY(e.touches[0].pageY);
+        }
+      }}
+    >
       <Application
         backgroundAlpha={0}
         resizeTo={parentRef}
