@@ -9,9 +9,6 @@ export default function Home() {
         </div>
         hello! world?
       </div>
-      <div>
-        aa
-      </div>
     </>
   );
 }

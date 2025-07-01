@@ -135,6 +135,10 @@ export default function DummySprite(){
         backgroundAlpha={0}
         resizeTo={parentRef}
         eventMode='auto'
+        onInit={(app)=>{
+          app.renderer.events.autoPreventDefault = false;
+          app.canvas.style.touchAction = 'auto';
+        }}
       >
         <Dummy parentRef={parentRef} mouseX={mouseX} mouseY={mouseY} />
       </Application>
