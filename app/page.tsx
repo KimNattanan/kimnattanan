@@ -2,6 +2,7 @@ import LeftTab from '@/components/LeftTab';
 import Image from 'next/image';
 import DummySprite from '@/components/DummySprite';
 import About from '@/components/About';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -27,6 +28,13 @@ export default function Home() {
             </div>
           </div>
           <div className='flex-1/2'>
+            <div className='w-full flex justify-center mt-8'>
+              <Link
+                href='/dummy'
+                target='_blank'
+                className='text-3xl text-rose-500 hover:scale-150'
+              >??</Link>
+            </div>
             <About/>
             <About/>
             <About/>
