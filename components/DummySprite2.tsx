@@ -1,16 +1,22 @@
 'use client'
 import { Application, extend, useTick } from '@pixi/react';
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { Texture, Assets, Sprite } from 'pixi.js';
-import { useRouter } from 'next/navigation';
+import { Texture, Assets, Sprite, FederatedPointerEvent } from 'pixi.js';
 
-function Dummy({posX}:{posX: number}){
+function Dummy(
+  {parentRef, mouseX, mouseY} :
+  {parentRef: React.RefObject<HTMLDivElement|null>, mouseX: number, mouseY: number}
+){
   const [fallAnim, setFallAnim] = useState(Texture.EMPTY);
   const [idleAnim, setIdleAnim] = useState(Texture.EMPTY);
   const [curAnim, setCurAnim] = useState(Texture.EMPTY);
   const [floorY, setFloorY] = useState(0);
+  const [curX, setCurX] = useState(0);
   const [curY, setCurY] = useState(0);
   const [velo, setVelo] = useState(0);
+  const [dragging, setDragging] = useState(false);
+  const [pivotX, setPivotX] = useState(0);
+  const [pivotY, setPivotY] = useState(0);
   useEffect(() => {
     if (fallAnim === Texture.EMPTY) {
       Assets.load('/fall_anim.png').then((res) => {
@@ -33,14 +39,22 @@ function Dummy({posX}:{posX: number}){
 
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
+    window.addEventListener("mouseup", mouseUp);
+    window.addEventListener("touchend", mouseUp);
     setFloorY(window.scrollY + window.innerHeight);
     setCurY(floorY);
+    setCurX(window.innerWidth-200);
     return () => {
        window.removeEventListener("scroll", onScroll);
     }
   }, []);
 
   useTick(time=>{
+    if(dragging){
+      if(curAnim !== fallAnim) setCurAnim(fallAnim);
+      if(velo!=0) setVelo(0);
+      return;
+    }
     const dt = time.deltaTime;
     if(curY>floorY){
       setCurY(floorY);
@@ -50,10 +64,10 @@ function Dummy({posX}:{posX: number}){
     else if(curY<floorY){
       if(curAnim !== fallAnim) setCurAnim(fallAnim);
       setCurY((prev) => {
-        const newY = prev + velo*dt + 0.5 * 0.3 * dt * dt;
+        const newY = prev + velo*dt + 0.5 * 3 * dt * dt;
         return newY > floorY ? floorY : newY;
       });
-      setVelo((prev) => prev + 0.3 * dt);
+      setVelo((prev) => prev + 3 * dt);
     }
     else if(curAnim !== idleAnim){
       setCurAnim(idleAnim);
@@ -61,11 +75,25 @@ function Dummy({posX}:{posX: number}){
     }
   });
 
-  const router = useRouter();
-
-  const onClick = useCallback(()=>{
-    router.push('/dummy');
+  const mouseDown = (e: FederatedPointerEvent) => {
+    setDragging(true);
+    setPivotX(e.globalX - curX);
+    setPivotY(e.globalY - curY);
+  };
+  const mouseUp = useCallback(() => {
+    setDragging(false);
   },[]);
+  useEffect(()=>{
+    if(!dragging) return;
+    const newX = mouseX - pivotX;
+    const newY = mouseY - pivotY;
+    if(newX >= 100 && (parentRef == null || newX < parentRef.current!.clientWidth - 100)){
+      setCurX(newX);
+    }
+    if(newY>=200 && newY <= floorY){
+      setCurY(newY);
+    }
+  },[mouseX,mouseY]);
 
   return (
     <pixiSprite
@@ -73,32 +101,45 @@ function Dummy({posX}:{posX: number}){
       width={200}
       height={200}
       anchor={{ x: 0.5, y: 1 }}
-      position={{x:posX,y:curY}}
       eventMode='static'
+      position={{x:curX,y:curY}}
       cursor='pointer'
-      onClick={onClick}
+      onMouseDown={mouseDown}
+      onTouchStart={mouseDown}
     />
   );
 }
 
 extend({ Sprite });
-export default function DummySprite({posX}:{posX: number}){
+export default function DummySprite2(){
   const parentRef = useRef<HTMLDivElement>(null);
+  const [mouseX,setMouseX] = useState(0);
+  const [mouseY,setMouseY] = useState(0);
   return (
     <div
       ref={parentRef}
       className='w-full h-full'
+      onMouseMove={(e)=>{
+        setMouseX(e.pageX);
+        setMouseY(e.pageY);
+      }}
+      onTouchMove={(e)=>{
+        if(e.touches.length > 0){
+          setMouseX(e.touches[0].pageX);
+          setMouseY(e.touches[0].pageY);
+        }
+      }}
     >
       <Application
         backgroundAlpha={0}
         resizeTo={parentRef}
+        eventMode='auto'
         onInit={(app)=>{
           app.renderer.events.autoPreventDefault = false;
           app.canvas.style.touchAction = 'auto';
         }}
-        eventMode='static'
       >
-        <Dummy posX={posX}/>
+        <Dummy parentRef={parentRef} mouseX={mouseX} mouseY={mouseY} />
       </Application>
     </div>
   );
