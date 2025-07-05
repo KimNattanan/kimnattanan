@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function LeftTab(){
   return (
-    <div className="fixed w-16 h-screen flex justify-center flex-col items-center">
+    <div className="fixed w-16 h-screen flex justify-center flex-col items-center select-none">
       <div className='flex flex-col-reverse items-center mt-2 my-6'>
         <Link
           href='https://github.com/KimNattanan'

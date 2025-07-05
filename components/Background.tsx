@@ -1,48 +1,29 @@
-'use client'
-import { Application, extend, useTick } from '@pixi/react';
-import { useState, useEffect, useRef } from 'react';
-import { Texture, Assets, TilingSprite } from 'pixi.js';
+'use client';
 
-function Tile(){
-  const [texture, setTexture] = useState(Texture.EMPTY);
-  const [tilePos, setTilePos] = useState({x: 0, y: 0});
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+
+export default function AnimatedBackground({width, height}:{width:number, height:number}) {
+  const ref = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    if (texture === Texture.EMPTY) {
-      Assets.load('/bg_overlay.png').then((res) => {
-        setTexture(res)
-      });
-    }
-  }, [texture]);
-  useTick(time=>{
-    setTilePos((prev)=>({
-      x: prev.x - 0.5 * time.deltaTime,
-      y: prev.y - 0.5 * time.deltaTime
-    }));
-  });
-  return (
-    <pixiTilingSprite
-      texture={texture}
-      alpha={0.5}
-      width={10000}
-      height={10000}
-      anchor={{ x: 0.5, y: 0.5 }}
-      tileScale={{ x: 0.09, y: 0.09 }}
-      tilePosition={tilePos}
-    />
-  );
-}
+    gsap.to(ref.current, {
+      backgroundPosition: `-=${width}px -=${height}px`,
+      duration: 20,
+      ease: "linear",
+      repeat: -1,
+    });
+  }, []);
 
-extend({ TilingSprite });
-export default function Background(){
-  const parentRef = useRef<HTMLDivElement>(null);
   return (
-    <div ref={parentRef} className='w-full h-full'>
-      <Application
-        backgroundAlpha={0}
-        resizeTo={parentRef}
-      >
-        <Tile />
-      </Application>
-    </div>
+    <div
+      ref={ref}
+      className="fixed inset-0 -z-50 bg-repeat opacity-30 bg-amber-100"
+      style={{
+        backgroundImage: "url('/bg_tile.png')",
+        backgroundSize: `${width}px ${height}px`,
+        backgroundPosition: "0px 0px"
+      }}
+    />
   );
 }
