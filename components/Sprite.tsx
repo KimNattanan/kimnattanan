@@ -23,9 +23,10 @@ export default function Sprite({gravity, width, height, posX}:{gravity:number, w
     window.addEventListener("scroll", onScroll);
     setFloorY(window.scrollY + window.innerHeight);
     gsap.to(ref.current,{
-      x: posX,
-      y: 0,
+      x: (posX + window.screen.width) % window.screen.width,
+      y: -height,
       duration: 0,
+      opacity: 1,
     });
     return () => {
        window.removeEventListener("scroll", onScroll);
@@ -58,7 +59,7 @@ export default function Sprite({gravity, width, height, posX}:{gravity:number, w
     })
   },[floorY]);
   return (
-    <div ref={ref} className="w-fit h-fit select-none">
+    <div ref={ref} className="w-fit h-fit select-none opacity-0">
       {
       falling ? <Image
         src='/sprite/fall.png'
