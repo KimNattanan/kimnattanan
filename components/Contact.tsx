@@ -57,15 +57,15 @@ export default function Contact(){
   }
 
   return (
-    <div className="flex flex-col w-full max-w-full my-12 bg-[rgba(251,85,138,0.1)] border-1 border-x-0">
+    <div className="flex flex-col w-full max-w-full my-24 bg-[rgba(251,85,138,0.1)] border-1 border-x-0">
       <div className="flex justify-center text-7xl my-8 text-[rgb(77,13,33)] select-none tracking-[0.5rem]">
         CONTACT
       </div>
       <div className="mb-12 mx-12 text-xl whitespace-pre-wrap tracking-tight">
         <div className="flex justify-center">
-          <span>{`Please feel free to contact me at `}</span>
+          <span>{`Please feel free to contact me at`}</span>
           <span
-            className={`font-medium ${emailClicked ? 'cursor-default text-rose-800' : 'cursor-pointer text-rose-600'} select-none relative`}
+            className={`ml-1 font-medium ${emailClicked ? 'cursor-default text-rose-800' : 'cursor-pointer text-rose-600'} select-none relative`}
             onMouseDown={onEmailClicked}
             ref={emailRef}
           >
@@ -77,8 +77,8 @@ export default function Contact(){
           <span>,</span>
         </div>
         <div className="flex justify-center">
-          <span>{`or via `}</span>
-          <span className="self-center">
+          <span>{`or via`}</span>
+          <span className="ml-2 self-center select-none">
             <Link
               href='https://www.facebook.com/nattanan.jeungtanasirikul.1'
               target='_blank'
@@ -91,8 +91,8 @@ export default function Contact(){
               />
             </Link>
           </span>
-          <span>{`'s , `}</span>
-          <span className="self-center">
+          <span>{`'s,`}</span>
+          <span className="ml-2 self-center select-none">
             <Link
               href='https://www.instagram.com/kimnattanan/'
               target='_blank'

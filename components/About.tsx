@@ -1,6 +1,6 @@
 export default function About(){
   return (
-    <div className="flex flex-col w-full max-w-full my-12 bg-[rgba(251,85,138,0.1)] border-1 border-x-0">
+    <div className="flex flex-col w-full max-w-full my-24 bg-[rgba(251,85,138,0.1)] border-1 border-x-0">
       <div className="flex justify-center text-7xl my-8 text-[rgb(77,13,33)] select-none tracking-[0.5rem]">
         ABOUT
       </div>

@@ -13,41 +13,43 @@ const geistMono = Geist_Mono({
 const mplusRounded = localFont({
   src: [
     {
-      path: '../public/fonts/mplusrounded1c/MPLUSRounded1c-Thin.ttf',
+      path: './fonts/mplusrounded1c/MPLUSRounded1c-Thin.ttf',
       weight: '100',
       style: 'normal',
     },
     {
-      path: '../public/fonts/mplusrounded1c/MPLUSRounded1c-Light.ttf',
+      path: './fonts/mplusrounded1c/MPLUSRounded1c-Light.ttf',
       weight: '300',
       style: 'normal',
     },
     {
-      path: '../public/fonts/mplusrounded1c/MPLUSRounded1c-Regular.ttf',
+      path: './fonts/mplusrounded1c/MPLUSRounded1c-Regular.ttf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../public/fonts/mplusrounded1c/MPLUSRounded1c-Medium.ttf',
+      path: './fonts/mplusrounded1c/MPLUSRounded1c-Medium.ttf',
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../public/fonts/mplusrounded1c/MPLUSRounded1c-Bold.ttf',
+      path: './fonts/mplusrounded1c/MPLUSRounded1c-Bold.ttf',
       weight: '700',
       style: 'normal',
     },
     {
-      path: '../public/fonts/mplusrounded1c/MPLUSRounded1c-ExtraBold.ttf',
+      path: './fonts/mplusrounded1c/MPLUSRounded1c-ExtraBold.ttf',
       weight: '800',
       style: 'normal',
     },
     {
-      path: '../public/fonts/mplusrounded1c/MPLUSRounded1c-Black.ttf',
+      path: './fonts/mplusrounded1c/MPLUSRounded1c-Black.ttf',
       weight: '900',
       style: 'normal',
     },
   ],
+  variable: '--font-mplusrounded',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -65,14 +67,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
+  console.log(geistMono.className)
   return (
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
-        className={`${mplusRounded.className} ${geistMono.variable} antialiased font-n`}
+        className={`${mplusRounded.className} ${geistMono.variable} antialiased selection:bg-[#ffe23b83]`}
       >
         <Startup delay={1} duration={0.5}/>
         <Background width={272} height={253}/>

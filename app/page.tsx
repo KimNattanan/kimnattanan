@@ -15,10 +15,10 @@ export default function Home() {
         <LeftTab />
         <div className='flex ml-16'>
           <div className='h-screen min-w-[40vw] max-w-[40vw] sticky top-0 flex flex-col items-center'>
-            <div>
-              Nattanan Jeungtanasirikul
+            <div className='text-4xl pt-10 text-[rgb(55,33,33)] font-[weight:600] font-newtegomin whitespace-pre tracking-tight'>
+              {`Nattanan  Jeungtanasirikul`}
             </div>
-            <div className='mt-10 w-[50%] aspect-square relative border-2 p-1 rounded-md'>
+            <div className='my-4 w-[50%] aspect-square relative border-2 p-1 rounded-md'>
               <div className='relative w-full h-full select-none bg-[rgb(33,22,22)]'>
                 <Image
                   src='/prof.jpg'
@@ -28,6 +28,10 @@ export default function Home() {
                 />
               </div>
             </div>
+            <div className='text-4xl font-bold font-newtegomin text-cyan-600'>
+              Kim
+            </div>
+            <div className='w-48 border-t-2 mt-2'/>
           </div>
           <div className='grow pr-12 overflow-hidden'>
             <About/>

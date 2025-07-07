@@ -5,11 +5,20 @@
   --foreground: #171717;
 }
 
+@font-face {
+  font-family: 'New Tegomin';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/newtegomin/NewTegomin-Regular.ttf') format('truetype');
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-newtegomin: 'New Tegomin';
 }
 
 body {
@@ -17,7 +26,6 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
-
 
 
 
