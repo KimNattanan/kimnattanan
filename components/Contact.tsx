@@ -30,6 +30,8 @@ export default function Contact(){
 
   const emailRef = useRef<HTMLSpanElement>(null);
   const [emailClicked, setEmailClicked] = useState(false);
+  const [emailHover, setEmailHover] = useState(false);
+  const [copyLabelX, setCopyLabelX] = useState(0);
   const [fx, setFx] = useState<{x:number, y:number, angle:number, rot:number}>({
     x: 0,
     y: 0,
@@ -55,6 +57,18 @@ export default function Contact(){
       setEmailClicked(false);
     },3000);
   }
+  const onEmailMouseEnter = () => {
+    setEmailHover(true);
+  }
+  const onEmailMouseMove = (e: React.MouseEvent<HTMLSpanElement>) => {
+    if(!emailRef.current) return;
+    const rect = emailRef.current.getBoundingClientRect();
+    setCopyLabelX(e.clientX - rect.x - 17);
+    console.log(copyLabelX);
+  }
+  const onEmailMouseLeave = () => {
+    setEmailHover(false);
+  }
 
   return (
     <div className="flex flex-col w-full max-w-full my-24 bg-[rgba(251,85,138,0.1)] border-1 border-x-0">
@@ -66,13 +80,23 @@ export default function Contact(){
           <span>{`Please feel free to contact me at`}</span>
           <span
             className={`ml-1 font-medium ${emailClicked ? 'cursor-default text-rose-800' : 'cursor-pointer text-rose-600'} select-none relative`}
-            onMouseDown={onEmailClicked}
             ref={emailRef}
-          >
-            {emailClicked && (
+            >
+            {emailClicked ? (
               <ClickEffect x={fx.x} y={fx.y} rot={fx.rot} text="Copied!"/>
+            ) : emailHover && (
+              <div className={`absolute -z-10 -top-[20px] text-lg text-rose-600 font-bold font-mono`} style={{left: copyLabelX}}>
+                Copy?
+              </div>
             )}
-            {`jeung.nattanan@gmail.com`}
+            <div
+              onMouseEnter={onEmailMouseEnter}
+              onMouseMove={onEmailMouseMove}
+              onMouseLeave={onEmailMouseLeave}
+              onMouseDown={onEmailClicked}
+            >
+              {`jeung.nattanan@gmail.com`}
+            </div>
           </span>
           <span>,</span>
         </div>
