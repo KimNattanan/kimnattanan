@@ -18,12 +18,13 @@ export default function Home() {
             <div className='text-4xl pt-10 text-[rgb(55,33,33)] font-[weight:600] font-newtegomin whitespace-pre tracking-tight'>
               {`Nattanan  Jeungtanasirikul`}
             </div>
-            <div className='my-4 w-[50%] aspect-square relative border-2 p-1 rounded-md'>
-              <div className='relative w-full h-full select-none bg-[rgb(33,22,22)]'>
+            <div className=' my-4 w-[60%] relative border-2 p-1 rounded-md'>
+              <div className='relative w-full select-none bg-[rgb(33,22,22)]'>
                 <Image
                   src='/prof.jpg'
                   alt='profile'
-                  fill
+                  height={1463}
+                  width={1170}
                   draggable='false'
                 />
               </div>
