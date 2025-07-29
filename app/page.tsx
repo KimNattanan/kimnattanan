@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <div className='h-[5000px] relative'>
         <div className="absolute w-full h-full -z-40 overflow-hidden">
-          <Sprite width={200} height={200} gravity={2000} posX={-200}/>
+          <Sprite width={200} height={200} gravity={3000} posX={-160}/>
         </div>
         <LeftTab />
         <div className='md:flex
