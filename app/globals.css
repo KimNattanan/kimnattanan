@@ -19,6 +19,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-newtegomin: 'New Tegomin';
+  --breakpoint-xs: 30rem;
 }
 
 body {

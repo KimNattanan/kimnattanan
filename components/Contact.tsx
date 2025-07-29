@@ -75,16 +75,20 @@ export default function Contact(){
   }
 
   return (
-    <div className="flex flex-col w-full my-24 bg-[rgba(251,85,138,0.1)] border-1 border-x-0
-                    max-md:w-[400px] max-md:mx-auto">
-      <div className="flex justify-center my-8 text-[rgb(77,13,33)] select-none tracking-[0.5rem]
+    <div className="flex flex-col bg-[rgba(251,85,138,0.1)] border-1 border-x-0
+                    md:w-full md:mx-0
+                    xs:w-[384px] xs:my-24
+                    w-[248px] mx-auto my-16">
+      <div className="flex justify-center mt-8 text-[rgb(77,13,33)] select-none tracking-[0.5rem]
                       lg:text-7xl
-                      text-5xl">
+                      xs:text-5xl xs:mb-8
+                      text-4xl mb-4">
         CONTACT
       </div>
       <div className="mb-12 whitespace-pre-wrap tracking-tight
                       lg:text-xl lg:mx-12
-                      text-base mx-6">
+                      xs:text-base
+                      mx-6 text-xs">
         <div className="hidden xl:flex justify-center">
           <span>Please feel free to contact me at</span>
           <span
@@ -126,12 +130,13 @@ export default function Contact(){
               href='https://www.facebook.com/nattanan.jeungtanasirikul.1'
               target='_blank'
             >
-              <Image
-                src={'/facebook_icon.svg'}
-                alt="facebook"
-                width={24}
-                height={24}
-              />
+              <div className="relative w-4 h-4 xs:w-6 xs:h-6">
+                <Image
+                  src={'/facebook_icon.svg'}
+                  alt="facebook"
+                  fill
+                />
+              </div>
             </Link>
           </span>
           <span>{`'s,`}</span>
@@ -140,12 +145,13 @@ export default function Contact(){
               href='https://www.instagram.com/kimnattanan/'
               target='_blank'
             >
-              <Image
-                src={'/instagram_icon.svg'}
-                alt="instagram"
-                width={24}
-                height={24}
-              />
+              <div className="relative w-4 h-4 xs:w-6 xs:h-6">
+                <Image
+                  src={'/instagram_icon.svg'}
+                  alt="instagram"
+                  fill
+                />
+              </div>
             </Link>
           </span>
           <span>{`'s DMs.`}</span>

@@ -9,12 +9,14 @@ export default function Home() {
   return (
     <>
       <div className='h-[5000px] relative'>
-        <div className="absolute left-0 w-full h-full -z-40 overflow-hidden">
+        <div className="absolute w-full h-full -z-40 overflow-hidden">
           <Sprite width={200} height={200} gravity={2000} posX={-200}/>
         </div>
         <LeftTab />
-        <div className='md:flex mr-12
+        <div className='md:flex
                         lg:ml-16
+                        xs:mr-12
+                        mr-6
                         ml-12'
         >
           <div className='flex flex-col items-center
@@ -24,7 +26,7 @@ export default function Home() {
                             xl:text-4xl
                             lg:text-3xl
                             md:text-2xl
-                            text-4xl max-md:pb-4'>
+                            text-xs max-md:pb-4'>
               {`Nattanan  Jeungtanasirikul`}
             </div>
             <div className=' my-4 w-[60%] relative border-2 p-1 rounded-md'>
