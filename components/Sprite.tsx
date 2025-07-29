@@ -23,7 +23,7 @@ export default function Sprite({gravity, width, height, posX}:{gravity:number, w
     window.addEventListener("scroll", onScroll);
     setFloorY(window.scrollY + window.innerHeight);
     gsap.to(ref.current,{
-      x: (posX + window.screen.width) % window.screen.width,
+      x: (posX + window.innerWidth) % window.innerWidth,
       y: -height,
       duration: 0,
       opacity: 1,

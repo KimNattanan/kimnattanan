@@ -25,8 +25,10 @@ export default function Home() {
             <div className='pt-10 text-[rgb(55,33,33)] font-[weight:600] font-newtegomin whitespace-pre tracking-tight
                             xl:text-4xl
                             lg:text-3xl
-                            md:text-2xl
-                            text-xs max-md:pb-4'>
+                            md:text-2xl md:pb-0
+                            sm:text-4xl
+                            xs:text-3xl
+                            text-xl pb-4'>
               {`Nattanan  Jeungtanasirikul`}
             </div>
             <div className=' my-4 w-[60%] relative border-2 p-1 rounded-md'>

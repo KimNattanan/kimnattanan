@@ -82,7 +82,7 @@ export default function Contact(){
       <div className="flex justify-center mt-8 text-[rgb(77,13,33)] select-none tracking-[0.5rem]
                       lg:text-7xl
                       xs:text-5xl xs:mb-8
-                      text-4xl mb-4">
+                      text-4xl mb-6">
         CONTACT
       </div>
       <div className="mb-12 whitespace-pre-wrap tracking-tight
@@ -115,13 +115,15 @@ export default function Contact(){
         </div>
         <div className="xl:hidden block text-center">
           <div>Please feel free to contact me at</div>
-          <span className='text-rose-600 font-medium'>{`jeung.nattanan@gmail.com`}</span>
-          {emailClicked ? (
-            <span className="ml-2 mr-1 font-bold">✓</span>
-          ) : (
-            <span className="ml-2 mr-1 font-bold cursor-pointer" onClick={onEmailClicked2}>[copy]</span>
-          )}
-          <span>,</span>
+          <div className="my-2">
+            <span className='text-rose-600 font-medium border-b-1'>{`jeung.nattanan@gmail.com`}</span>
+            {emailClicked ? (
+              <span className="ml-2 mr-1 font-bold">✓</span>
+            ) : (
+              <span className="ml-2 mr-1 font-bold cursor-pointer" onClick={onEmailClicked2}>[copy]</span>
+            )}
+            <span>,</span>
+          </div>
         </div>
         <div className="flex justify-center">
           <span>{`or via`}</span>
