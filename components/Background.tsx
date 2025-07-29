@@ -98,7 +98,7 @@ export default function Background({width, height}:{width:number, height:number}
       const last = prev.at(-1);
       return [
         ...prev,
-        {x: e.x, y: e.y, id: last ? last.id+1 : 0}
+        {x: e.clientX, y: e.clientY, id: last ? last.id+1 : 0}
       ];
     });
     setTimeout(()=>{
