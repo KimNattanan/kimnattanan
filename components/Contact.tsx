@@ -1,12 +1,9 @@
 'use client'
 
 import gsap from "gsap";
-import { Physics2DPlugin } from "gsap/Physics2DPlugin";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-
-gsap.registerPlugin(Physics2DPlugin);
 
 function ClickEffect(
   {text, x, y, rot} :
@@ -39,6 +36,13 @@ export default function Contact(){
     rot: 0
   });
 
+  const onEmailClicked2 = () => {
+    if(emailClicked) return;
+    setEmailClicked(true);
+    setTimeout(()=>{
+      setEmailClicked(false);
+    },3000);
+  }
   const onEmailClicked = (e: React.MouseEvent<HTMLSpanElement>) => {
     if(emailClicked) return;
     navigator.clipboard.writeText('jeung.nattanan@gmail.com');
@@ -71,17 +75,22 @@ export default function Contact(){
   }
 
   return (
-    <div className="flex flex-col w-full max-w-full my-24 bg-[rgba(251,85,138,0.1)] border-1 border-x-0">
-      <div className="flex justify-center text-7xl my-8 text-[rgb(77,13,33)] select-none tracking-[0.5rem]">
+    <div className="flex flex-col w-full my-24 bg-[rgba(251,85,138,0.1)] border-1 border-x-0
+                    max-md:w-[400px] max-md:mx-auto">
+      <div className="flex justify-center my-8 text-[rgb(77,13,33)] select-none tracking-[0.5rem]
+                      lg:text-7xl
+                      text-5xl">
         CONTACT
       </div>
-      <div className="mb-12 mx-12 text-xl whitespace-pre-wrap tracking-tight">
-        <div className="flex justify-center">
-          <span>{`Please feel free to contact me at`}</span>
+      <div className="mb-12 whitespace-pre-wrap tracking-tight
+                      lg:text-xl lg:mx-12
+                      text-base mx-6">
+        <div className="hidden xl:flex justify-center">
+          <span>Please feel free to contact me at</span>
           <span
             className={`ml-1 font-medium ${emailClicked ? 'cursor-default text-rose-800' : 'cursor-pointer text-rose-600'} select-none relative`}
             ref={emailRef}
-            >
+          >
             {emailClicked ? (
               <ClickEffect x={fx.x} y={fx.y} rot={fx.rot} text="Copied!"/>
             ) : emailHover && (
@@ -89,15 +98,25 @@ export default function Contact(){
                 Copy?
               </div>
             )}
-            <div
+            <span
               onMouseEnter={onEmailMouseEnter}
               onMouseMove={onEmailMouseMove}
               onMouseLeave={onEmailMouseLeave}
               onMouseDown={onEmailClicked}
             >
               {`jeung.nattanan@gmail.com`}
-            </div>
+            </span>
           </span>
+          <span>,</span>
+        </div>
+        <div className="xl:hidden block text-center">
+          <div>Please feel free to contact me at</div>
+          <span className='text-rose-600 font-medium'>{`jeung.nattanan@gmail.com`}</span>
+          {emailClicked ? (
+            <span className="ml-2 mr-1 font-bold">✓</span>
+          ) : (
+            <span className="ml-2 mr-1 font-bold cursor-pointer" onClick={onEmailClicked2}>[copy]</span>
+          )}
           <span>,</span>
         </div>
         <div className="flex justify-center">

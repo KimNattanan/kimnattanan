@@ -3,7 +3,9 @@ import Link from 'next/link';
 
 export default function LeftTab(){
   return (
-    <div className="fixed w-16 h-screen flex justify-center flex-col items-center select-none">
+    <div className="fixed h-screen flex justify-center flex-col items-center select-none
+                    lg:w-16
+                    w-12">
       <div className='flex flex-col-reverse items-center mt-2 my-6'>
         <Link
           href='https://github.com/KimNattanan'
@@ -11,12 +13,13 @@ export default function LeftTab(){
           target='_blank'
           id='github-link'
         >
-          <Image
-            src='/github_icon.svg'
-            alt='github'
-            width={32}
-            height={32}
-          />
+          <div className='relative w-6 h-6 lg:w-8 lg:h-8'>
+            <Image
+              src='/github_icon.svg'
+              alt='github'
+              fill
+            />
+          </div>
         </Link>
         <div className='w-0 h-0 select-arrow border-l-10 border-r-10 border-t-16 border-transparent border-t-rose-500'/>
       </div>
@@ -27,12 +30,13 @@ export default function LeftTab(){
           target='_blank'
           id='fb-link'
         >
-          <Image
-            src='/facebook_icon.svg'
-            alt='facebook'
-            width={32}
-            height={32}
-          />
+          <div className='relative w-6 h-6 lg:w-8 lg:h-8'>
+            <Image
+              src='/facebook_icon.svg'
+              alt='facebook'
+              fill
+            />
+          </div>
         </Link>
         <div className='w-0 h-0 select-arrow border-l-10 border-r-10 border-t-16 border-transparent border-t-rose-500'/>
       </div>
@@ -43,12 +47,13 @@ export default function LeftTab(){
           target='_blank'
           id='ig-link'
         >
-          <Image
-            src='/instagram_icon.svg'
-            alt='instagram'
-            width={32}
-            height={32}
-          />
+          <div className='relative w-6 h-6 lg:w-8 lg:h-8'>
+            <Image
+              src='/instagram_icon.svg'
+              alt='instagram'
+              fill
+            />
+          </div>
         </Link>
         <div className='w-0 h-0 select-arrow border-l-10 border-r-10 border-t-16 border-transparent border-t-rose-500'/>
       </div>

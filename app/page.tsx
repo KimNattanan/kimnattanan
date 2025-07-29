@@ -13,18 +13,28 @@ export default function Home() {
           <Sprite width={200} height={200} gravity={2000} posX={-200}/>
         </div>
         <LeftTab />
-        <div className='flex ml-16'>
-          <div className='h-screen min-w-[40vw] max-w-[40vw] sticky top-0 flex flex-col items-center'>
-            <div className='text-4xl pt-10 text-[rgb(55,33,33)] font-[weight:600] font-newtegomin whitespace-pre tracking-tight'>
+        <div className='md:flex mr-12
+                        lg:ml-16
+                        ml-12'
+        >
+          <div className='flex flex-col items-center
+                          md:max-w-[40vw] md:h-screen md:sticky md:top-0
+                          '>
+            <div className='pt-10 text-[rgb(55,33,33)] font-[weight:600] font-newtegomin whitespace-pre tracking-tight
+                            xl:text-4xl
+                            lg:text-3xl
+                            md:text-2xl
+                            text-4xl max-md:pb-4'>
               {`Nattanan  Jeungtanasirikul`}
             </div>
             <div className=' my-4 w-[60%] relative border-2 p-1 rounded-md'>
-              <div className='relative w-full select-none bg-[rgb(33,22,22)]'>
+              <div className='relative w-full overflow-hidden select-none bg-[rgb(33,22,22)]'>
                 <Image
                   src='/prof.jpg'
                   alt='profile'
                   height={1463}
                   width={1170}
+                  style={{objectFit: 'contain'}}
                   draggable='false'
                 />
               </div>
@@ -34,7 +44,8 @@ export default function Home() {
             </div>
             <div className='w-48 border-t-2 mt-2'/>
           </div>
-          <div className='grow pr-12 overflow-hidden'>
+          <div className='overflow-hidden
+                          md:grow md:pl-4'>
             <About/>
             <DSA/>
             <Contact/>
