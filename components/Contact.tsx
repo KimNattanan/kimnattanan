@@ -38,6 +38,7 @@ export default function Contact(){
 
   const onEmailClicked2 = () => {
     if(emailClicked) return;
+    navigator.clipboard.writeText('jeung.nattanan@gmail.com');
     setEmailClicked(true);
     setTimeout(()=>{
       setEmailClicked(false);
