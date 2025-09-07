@@ -42,3 +42,11 @@ body {
   50% {opacity: 1;}
   100% {opacity: 0;}
 }
+
+#skill-box > div > ul > li {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+#skill-box > div > ul > li::before {
+  content: "‐  ";
+}

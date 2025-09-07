@@ -1,6 +1,6 @@
 'use client'
 import gsap from "gsap";
-import Background from "@/components/Background";
+import Background from "@/components/props/Background";
 import { useEffect, useRef, useState } from "react";
 
 export default function Startup({delay, duration}:{delay: number, duration: number}){
