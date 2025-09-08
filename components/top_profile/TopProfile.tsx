@@ -12,7 +12,7 @@ export default function TopProfile() {
                     mr-6 ml-12'
     >
       <div className='flex flex-col items-center
-                      md:max-w-[40vw] md:h-screen md:sticky md:top-0
+                      md:max-w-[40vw] md:h-dvh md:sticky md:top-0
                       '>
         <div className='pt-10 text-[rgb(55,33,33)] font-[weight:600] font-newtegomin whitespace-pre tracking-tight
                         xl:text-4xl

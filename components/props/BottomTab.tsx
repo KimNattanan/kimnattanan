@@ -2,16 +2,15 @@ import Link from 'next/link';
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { SiGithub } from 'react-icons/si';
 
-export default function LeftTab(){
+export default function BottomTab(){
   return (
-    <div className="fixed h-dvh justify-center flex-col items-center select-none
-                    lg:w-16
-                    xs:flex
-                    w-12 hidden">
-      <div className='flex flex-col-reverse items-center mt-2 mb-6'>
+    <div className="fixed w-dvw justify-center flex-row items-center select-none bottom-0
+                    lg:h-16
+                    xs:hidden
+                    h-12 flex">
+      <div className='flex flex-col-reverse items-center mx-6'>
         <Link
           href='https://github.com/KimNattanan'
-          className='mt-2'
           target='_blank'
           id='github-link'
         >
@@ -19,25 +18,21 @@ export default function LeftTab(){
             <SiGithub size={'100%'}/>
           </div>
         </Link>
-        <div className='w-0 h-0 select-arrow border-l-10 border-r-10 border-t-16 border-transparent border-t-rose-500'/>
       </div>
-      <div className='flex flex-col-reverse items-center mt-2 mb-6'>
+      <div className='flex flex-col-reverse items-center mx-6'>
         <Link
           href='https://www.linkedin.com/in/kimnattanan/'
-          className='mt-2'
           target='_blank'
-          id='linkedin-link'
+          id='linked-link'
         >
           <div className='relative w-6 h-6 lg:w-8 lg:h-8'>
             <FaLinkedin size={'100%'}/>
           </div>
         </Link>
-        <div className='w-0 h-0 select-arrow border-l-10 border-r-10 border-t-16 border-transparent border-t-rose-500'/>
       </div>
-      <div className='flex flex-col-reverse items-center mt-2 mb-6'>
+      <div className='flex flex-col-reverse items-center mx-6'>
         <Link
           href='https://www.facebook.com/nattanan.jeungtanasirikul.1'
-          className='mt-2'
           target='_blank'
           id='fb-link'
         >
@@ -45,12 +40,10 @@ export default function LeftTab(){
             <FaFacebook size={'100%'}/>
           </div>
         </Link>
-        <div className='w-0 h-0 select-arrow border-l-10 border-r-10 border-t-16 border-transparent border-t-rose-500'/>
       </div>
-      <div className='flex flex-col-reverse items-center mt-2 mb-6'>
+      <div className='flex flex-col-reverse items-center mx-6'>
         <Link
           href='https://www.instagram.com/kimnattanan/'
-          className='mt-2'
           target='_blank'
           id='ig-link'
         >
@@ -58,7 +51,6 @@ export default function LeftTab(){
             <FaInstagram size={'100%'}/>
           </div>
         </Link>
-        <div className='w-0 h-0 select-arrow border-l-10 border-r-10 border-t-16 border-transparent border-t-rose-500'/>
       </div>
     </div>
   );

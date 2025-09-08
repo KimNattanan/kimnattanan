@@ -13,7 +13,7 @@ export default function About(){
       <div className="whitespace-pre-wrap tracking-tight
                       lg:text-xl lg:mx-12 lg:first-letter:ml-12
                       xs:text-left xs:text-base first-letter:ml-6 xs:mb-12
-                      text-xs mx-6 mb-8">
+                      text-sm mx-6 mb-8">
         {`I'm a Computer Engineering student at Chulalongkorn University.  I'm currently exploring frontend and backend development.`}
       </div>
     </div>

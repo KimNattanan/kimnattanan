@@ -12,20 +12,11 @@ export default function Skill(){
       </div>
       <div className="whitespace-pre-wrap tracking-tight
                       lg:text-lg lg:mx-12
-                      xs:text-left xs:text-sm xs:mb-12 xs:flex xs:justify-center
-                      text-xs mx-6 mb-8 "
+                      xs:text-left xs:mb-12 xs:flex xs:justify-center
+                      text-sm mx-6 mb-8 "
         id="skill-box"
       >
         <div className="mb-4 xs:flex-auto xs:border-r-1">
-          <div className="font-bold">General</div>
-          <ul>
-            <li>HTML, CSS, JS</li>
-            <li>SQL, NoSQL</li>
-            <li>Docker</li>
-            <li>Git, GitHub</li>
-          </ul>
-        </div>
-        <div className="mb-4 xs:flex-auto xs:ml-4 xs:border-r-1">
           <div className="font-bold">Frontend</div>
           <ul>
             <li className="text-cyan-600">React, Next.js</li>
@@ -33,11 +24,17 @@ export default function Skill(){
             <li className="text-cyan-700">Tailwind</li>
           </ul>
         </div>
-        <div className="xs:flex-auto xs:ml-4">
+        <div className="mb-4 xs:flex-auto xs:ml-4 xs:border-r-1">
           <div className="font-bold">Backend</div>
           <ul>
             <li className="text-lime-700">Node.js</li>
             <li className="text-blue-700">Go</li>
+          </ul>
+        </div>
+        <div className="xs:flex-auto xs:ml-4">
+          <div className="font-bold">General</div>
+          <ul>
+            <li>Docker</li>
           </ul>
         </div>
       </div>

@@ -30,10 +30,10 @@ body {
 
 
 
-#github-link + .select-arrow, #fb-link + .select-arrow, #ig-link + .select-arrow {
+#github-link + .select-arrow, #fb-link + .select-arrow, #ig-link + .select-arrow, #linkedin-link + .select-arrow {
   opacity: 0;
 }
-#github-link:hover + .select-arrow, #fb-link:hover + .select-arrow, #ig-link:hover + .select-arrow {
+#github-link:hover + .select-arrow, #fb-link:hover + .select-arrow, #ig-link:hover + .select-arrow, #linkedin-link:hover + .select-arrow {
   animation: select-arrow-anim 0.7s infinite ease-out;
 }
 

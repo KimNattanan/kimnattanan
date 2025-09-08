@@ -16,12 +16,12 @@ export default function Sprite({gravity, width, height, posX}:{gravity:number, w
   const [falling, setFalling] = useState(true);
 
   const onScroll = useCallback(() => {
-    const { scrollY, innerHeight } = window;
-    setFloorY(scrollY + innerHeight);
+    const { scrollY, innerHeight, innerWidth } = window;
+    setFloorY(scrollY + innerHeight - (innerWidth < 480 ? 20 : 0));
   }, []);
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
-    setFloorY(window.scrollY + window.innerHeight);
+    setFloorY(window.scrollY + window.innerHeight  - (window.innerWidth < 480 ? 20 : 0));
     gsap.to(ref.current,{
       x: (posX + window.innerWidth) % window.innerWidth,
       y: -height,
