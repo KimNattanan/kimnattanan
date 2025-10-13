@@ -4,7 +4,7 @@ import { SiGithub } from 'react-icons/si';
 
 export default function BottomTab(){
   return (
-    <div className="fixed w-dvw justify-center flex-row items-center select-none bottom-0
+    <div className="fixed w-dvw justify-center flex-row items-center select-none bottom-0 z-10
                     lg:h-16
                     xs:hidden
                     h-12 flex">

@@ -19,22 +19,23 @@ export default function Skill(){
         <div className="mb-4 xs:flex-auto xs:border-r-1">
           <div className="font-bold">Frontend</div>
           <ul>
-            <li className="text-cyan-600">React, Next.js</li>
-            <li className="text-emerald-600">Vue, Nuxt</li>
+            <li className="text-cyan-600">React.js, Next.js</li>
             <li className="text-cyan-700">Tailwind</li>
           </ul>
         </div>
         <div className="mb-4 xs:flex-auto xs:ml-4 xs:border-r-1">
           <div className="font-bold">Backend</div>
           <ul>
-            <li className="text-lime-700">Node.js</li>
+            <li className="text-lime-700">Node.js, Express</li>
             <li className="text-blue-700">Go</li>
           </ul>
         </div>
         <div className="xs:flex-auto xs:ml-4">
           <div className="font-bold">General</div>
           <ul>
-            <li>Docker</li>
+            <li className="text-orange-600">Git</li>
+            <li className="text-cyan-600">Docker</li>
+            <li className="text-amber-600">AWS</li>
           </ul>
         </div>
       </div>
