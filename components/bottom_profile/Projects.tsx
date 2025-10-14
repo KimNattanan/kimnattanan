@@ -61,7 +61,7 @@ export default function Project(){
         </div>
         <div className='text-lg mt-4 mb-8'>
           <div className='text-lg font-semibold w-fit text-cyan-600 underline underline-offset-2 cursor-pointer my-2'>
-            <Link href={"https://github.com/KimNattanan/posn"} target='_blank'>
+            <Link href={"https://github.com/KimNattanan/compet"} target='_blank'>
               Competitive Programming Algorithms and Problem Solutions
             </Link>
           </div>
