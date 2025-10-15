@@ -28,7 +28,7 @@ export default function Project(){
             height={740}
             alt="exprec-1"
             style={{ objectFit: "contain" }}
-            className='w-full h-full'
+            className='w-full h-full border-1 rounded-xl border-black'
           />
         </div>
         <div className='
