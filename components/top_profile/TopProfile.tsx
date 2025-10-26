@@ -43,7 +43,7 @@ export default function TopProfile() {
         </div>
         <div className='w-48 border-t-2 mt-2'/>
         <div className='mt-4'>
-          <Link href={"/files/resume.pdf"} download="resume_nattanan_jeungtanasirikul.pdf">
+          <Link href={"/files/resume_nattanan.pdf"} download="resume_nattanan.pdf">
             <div className='border-1 rounded-full px-8 py-1 font-medium bg-white/50'>
               Resume
               <FaFilePdf className='inline-block ml-2 mb-1'/>
