@@ -35,7 +35,7 @@ export default function DSA(){
           <Link
             href={'https://codeforces.com/profile/kimnattanan'}
             target="_blank"
-            className="font-semibold text-[rgb(0,0,255)]"
+            className="font-semibold text-[#0000FF]"
           >kimnattanan</Link>
         </div>
         <div>
@@ -45,7 +45,7 @@ export default function DSA(){
           <Link
             href={'https://atcoder.jp/users/kimnattanan'}
             target="_blank"
-            className="font-semibold text-[#00C0C0]"
+            className="font-semibold text-[#0000FF]"
           >kimnattanan</Link>
         </div>
       </div>
@@ -61,7 +61,7 @@ export default function DSA(){
         <div className="border-t-1"></div>
         <div className="my-2">◉</div>
         <div className="my-2 pr-4 border-r-1">Codeforces</div>
-        <div className="py-2 pl-4 font-semibold text-[rgb(0,0,255)] content-center">
+        <div className="py-2 pl-4 font-semibold text-[#0000FF] content-center">
           <Link
             href={'https://codeforces.com/profile/kimnattanan'}
             target="_blank"
@@ -72,7 +72,7 @@ export default function DSA(){
         <div className="border-t-1"></div>
         <div className="my-2">◉</div>
         <div className="my-2 pr-4 border-r-1">Atcoder</div>
-        <div className="py-2 pl-4 font-semibold text-[#00C0C0] content-center">
+        <div className="py-2 pl-4 font-semibold text-[#0000FF] content-center">
           <Link
             href={'https://atcoder.jp/users/kimnattanan'}
             target="_blank"

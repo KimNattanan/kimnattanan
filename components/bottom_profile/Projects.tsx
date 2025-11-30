@@ -96,7 +96,7 @@ export default function Project(){
             </Link>
           </div>
           <div>
-            More specific scope to POSN.
+            More specific scope for POSN.
           </div>
         </div>
       </div>
