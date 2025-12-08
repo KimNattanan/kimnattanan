@@ -4,7 +4,7 @@ import Link from "next/link";
 function SkillTag({ title, color='#e45099', bgColor='transparent' }:{ title: string, color?: string, bgColor?: string }){
   return (
     <div
-      className='mx-2 mb-1 px-4 text-xs h-fit rounded-full border sm:border-2 font-medium sm:font-bold'
+      className='mx-1 mb-1 px-4 text-xs h-fit rounded-full border sm:border-2 font-medium sm:font-bold'
       style={{color: color, backgroundColor: bgColor}}
     >
       {title}
