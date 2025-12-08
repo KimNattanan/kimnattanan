@@ -1,6 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 
+function SkillTag({ title, color='#e45099', bgColor='transparent' }:{ title: string, color?: string, bgColor?: string }){
+  return (
+    <div
+      className='mx-2 mb-1 px-4 text-xs h-fit rounded-full border sm:border-2 font-medium sm:font-bold'
+      style={{color: color, backgroundColor: bgColor}}
+    >
+      {title}
+    </div>
+  )
+}
+
 export default function Projects(){
   return (
     <div id="projects" className="lg:mt-0 mt-20">
@@ -27,6 +38,16 @@ export default function Projects(){
               </div>
               <div className='mt-2 text-base'>
                 A simple website for tracking expenses and see summary dashboard. Making the expense noting easier by making templates of price and category.
+              </div>
+              <div className="flex mt-4 flex-wrap">
+                <SkillTag title="Next.js"/>
+                <SkillTag title="Typescript"/>
+                <SkillTag title="GO"/>
+                <SkillTag title="Fiber v2"/>
+                <SkillTag title="GORM"/>
+                <SkillTag title="PostgreSQL"/>
+                <SkillTag title="Docker"/>
+                <SkillTag title="AWS"/>
               </div>
               <div className='mt-4 flex justify-center text-sm font-semibold text-blue2'>
                 <Link href={"https://github.com/KimNattanan/exprec-backend"} target='_blank'>
@@ -58,6 +79,14 @@ export default function Projects(){
                 <span className="text-red2 font-bold">{` Gorilla `}</span>
                 framework, Google OAuth2 authentication, and a robust token management system.
               </div>
+              <div className="flex mt-4 flex-wrap">
+                <SkillTag title="GO"/>
+                <SkillTag title="Gorilla"/>
+                <SkillTag title="GORM"/>
+                <SkillTag title="PostgreSQL"/>
+                <SkillTag title="Redis"/>
+                <SkillTag title="Docker"/>
+              </div>
               <div className='mt-4 flex justify-center text-sm font-semibold text-blue2'>
                 <Link href={"https://github.com/KimNattanan/go-user-service"} target='_blank'>
                   <div className='w-fit underline underline-offset-2 cursor-pointer hover:opacity-50'>
@@ -86,6 +115,9 @@ export default function Projects(){
               </div>
               <div className='mt-2 text-base'>
                 Algorithms for competitive programming and solutions to some problems.
+              </div>
+              <div className="flex mt-4 flex-wrap">
+                <SkillTag title="C++"/>
               </div>
               <div className='mt-4 flex justify-center text-sm font-semibold text-blue2'>
                 <Link href={"https://github.com/KimNattanan/compet"} target='_blank'>

@@ -23,14 +23,19 @@ function MiniMenu(){
   return (
     <>
       <div
-        className="fixed py-8 flex flex-col items-center justify-center bg-background bg-paw w-full h-full z-50"
-        style={isOpen?{}:{opacity: 0, zIndex: -50}}
+        className="fixed py-8 bg-background bg-paw w-full h-full z-50 duration-200! ease-linear!"
+        style={isOpen?{}:{opacity: 0, pointerEvents: 'none'}}
       >
-        <MiniMenuBtn title="ABOUT" href="/#about" setIsOpen={setIsOpen}/>
-        <MiniMenuBtn title="PROJECTS" href="/#projects" setIsOpen={setIsOpen}/>
-        <MiniMenuBtn title="DSA" href="/#dsa" setIsOpen={setIsOpen}/>
-        <MiniMenuBtn title="CONTACT" href="/#contact" setIsOpen={setIsOpen}/>
-        <MiniMenuBtn title="SPECIAL" href="https://ouip.vercel.app" target="_blank" setIsOpen={setIsOpen}/>
+        <div
+          className="flex flex-col items-center justify-center w-full h-full duration-500!"
+          style={isOpen?{}:{transform: 'translateY(-50px)'}}
+        >
+          <MiniMenuBtn title="ABOUT" href="/#about" setIsOpen={setIsOpen}/>
+          <MiniMenuBtn title="PROJECTS" href="/#projects" setIsOpen={setIsOpen}/>
+          <MiniMenuBtn title="DSA" href="/#dsa" setIsOpen={setIsOpen}/>
+          <MiniMenuBtn title="CONTACT" href="/#contact" setIsOpen={setIsOpen}/>
+          <MiniMenuBtn title="SPECIAL" href="https://ouip.vercel.app" target="_blank" setIsOpen={setIsOpen}/>
+        </div>
       </div>
       <div
         className="z-50 lg:hidden fixed w-16 h-16 rounded-full right-4 bottom-4 bg-foreground cursor-pointer p-1"
