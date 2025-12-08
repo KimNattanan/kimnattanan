@@ -27,8 +27,8 @@ function CopyBtn({ value, size }:{ value: string, size: string }){
 
 export default function Contact(){
   return (
-    <div id="contact">
-      <div className="h-20"></div>
+    <div id="contact" className="lg:mt-0 mt-20">
+      <div className="h-20 lg:block hidden"></div>
       <div>
         <div className="topic">CONTACT</div>
         <div className="w-fit mx-auto font-medium">

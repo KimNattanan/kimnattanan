@@ -26,11 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased font-mplusrounded1c!`}
       >
         <div className="bg-background bg-paw w-screen h-screen fixed -z-50"/>
         <NavBar/>
-        <div className="font-mplusrounded1c" id="about">
+        <div id="about">
           <div className="h-20 lg:block hidden"></div>
           {children}
         </div>

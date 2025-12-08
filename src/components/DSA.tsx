@@ -1,7 +1,7 @@
 export default function DSA(){
   return (
-    <div id="dsa">
-      <div className="h-20"></div>
+    <div id="dsa" className="lg:mt-0 mt-20">
+      <div className="h-20 lg:block hidden"></div>
       <div className="bg-white/66 w-full rounded-[4rem] sm:rounded-[8rem] px-4 sm:px-12 pb-20">
         <div className="hidden sm:block topic lg:text-5xl!">
           Data Structures and Algorithms
@@ -20,9 +20,9 @@ export default function DSA(){
               1ˢᵗ place 🥇
             </div>
           </div>
-          <div className="flex flex-col sm:flex-row py-6 border-b border-dashed border-stone-300">
+          <div className="flex flex-col sm:flex-row py-6 border-b border-dashed border-background2">
             <a target="_blank" href="https://codeforces.com/profile/kimnattanan">
-              <div className="font-medium sm:font-normal bg-blue3 rounded-lg text-center text-white p-4 text-xl w-full sm:w-[280px]">
+              <div className="font-medium sm:font-normal bg-blue3 rounded-lg text-center text-white p-4 text-xl w-full sm:w-[280px] hover:opacity-50">
                 Codeforces
               </div>
             </a>
@@ -31,9 +31,9 @@ export default function DSA(){
               <p>Highest Rating: <span className="text-[#00f]">1859</span></p>
             </div>
           </div>
-          <div className="flex flex-col sm:flex-row py-6 border-b border-dashed border-stone-300">
+          <div className="flex flex-col sm:flex-row py-6 border-b border-dashed border-background2">
             <a target="_blank" href="https://atcoder.jp/users/kimnattanan">
-              <div className="font-medium sm:font-normal bg-blue3 rounded-lg text-center text-white p-4 text-xl w-full sm:w-[280px]">
+              <div className="font-medium sm:font-normal bg-blue3 rounded-lg text-center text-white p-4 text-xl w-full sm:w-[280px] hover:opacity-50">
                 Atcoder
               </div>
             </a>
