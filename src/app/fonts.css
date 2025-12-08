@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'New Tegomin';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/newtegomin/NewTegomin-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'M PLUS Rounded 1c';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 100;
+  src: url('/fonts/mplusrounded1c/MPLUSRounded1c-Thin.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'M PLUS Rounded 1c';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 300;
+  src: url('/fonts/mplusrounded1c/MPLUSRounded1c-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'M PLUS Rounded 1c';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/mplusrounded1c/MPLUSRounded1c-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'M PLUS Rounded 1c';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/mplusrounded1c/MPLUSRounded1c-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'M PLUS Rounded 1c';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/mplusrounded1c/MPLUSRounded1c-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'M PLUS Rounded 1c';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 800;
+  src: url('/fonts/mplusrounded1c/MPLUSRounded1c-ExtraBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'M PLUS Rounded 1c';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 900;
+  src: url('/fonts/mplusrounded1c/MPLUSRounded1c-Black.ttf') format('truetype');
+}

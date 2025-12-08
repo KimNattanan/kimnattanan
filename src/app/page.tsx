@@ -1,65 +1,129 @@
+import Contact from "@/components/Contact";
+import DSA from "@/components/DSA";
+import Projects from "@/components/Projects";
 import Image from "next/image";
+import Link from "next/link";
+import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaFilePdf } from 'react-icons/fa6';
+import { SiGithub } from 'react-icons/si';
+
+function LinkContainer() {
+  return (
+    <div className="flex justify-center flex-wrap">
+      <Link
+        className="content-center my-2` hover:opacity-50 sm:text-2xl"
+        href={"/files/resume_nattanan.pdf"}
+        download="resume_nattanan.pdf"
+      >
+        <div className='font-black w-fit border border-dashed rounded-lg px-4 sm:px-8 sm:py-1 sm:border-2 mx-2'>
+          Resume
+          <FaFilePdf className='inline-block ml-2 mb-1'/>
+        </div>
+      </Link>
+      <div className="flex my-2">
+        <Link
+          className="mx-2 content-center hover:opacity-50"
+          href='https://github.com/KimNattanan'
+          target='_blank'
+          id='github-link'
+        >
+          <div className='relative w-6 aspect-square sm:w-8'>
+            <SiGithub size={'100%'}/>
+          </div>
+        </Link>
+        <Link
+          className="mx-2 content-center hover:opacity-50"
+          href='https://www.linkedin.com/in/kimnattanan/'
+          target='_blank'
+          id='linkedin-link'
+        >
+          <div className='relative w-6 aspect-square sm:w-8 text-cyan-600'>
+            <FaLinkedin size={'100%'}/>
+          </div>
+        </Link>
+        <Link
+          className="mx-2 content-center hover:opacity-50"
+          href='https://www.facebook.com/nattanan.jeungtanasirikul.1'
+          target='_blank'
+          id='fb-link'
+        >
+          <div className='relative w-6 aspect-square sm:w-8 text-blue1'>
+            <FaFacebook size={'100%'}/>
+          </div>
+        </Link>
+        <Link
+          className="mx-2 content-center hover:opacity-50"
+          href='https://www.instagram.com/kimnattanan/'
+          target='_blank'
+          id='ig-link'
+        >
+          <div className='relative w-6 aspect-square sm:w-8 text-red1'>
+            <FaInstagram size={'100%'}/>
+          </div>
+        </Link>
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <div className="lg:mx-10 xl:mx-20 lg:flex lg:flex-row">
+        <div className="grow lg:pr-10 xl:pr-20 lg:pt-20 pt-6 sm:pb-6 pb-4">
+          <div className="text-[1.43rem] sm:text-4xl xl:text-5xl font-black text-center text-glow">
+            Nattanan Jeungtanasirikul
+          </div>
+          <div className="text-sm leading-4 sm:text-base text-center sm:mt-2 lg:text-xl font-bold text-blue1 text-glow">
+            Computer Engineering student at <span className=" text-nowrap">Chulalongkorn University</span>
+          </div>
+          <div className="hidden lg:block w-fit mx-auto space-y-2 mt-20 text-lg text-center text-glow">
+            <p>Interest in building reliable, efficient software.</p>
+            <p>Love practicing competitive programming.</p>
+          </div>
+          <div className="hidden lg:block mt-20">
+            <LinkContainer/>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="hidden lg:block aspect-9/16 h-[calc(100vh-5rem)] mx-auto relative shrink-0 overflow-hidden rounded-[4rem]">
+          <Image
+            alt="profile"
+            src={'/img/prof.jpg'}
+            fill
+          />
         </div>
-      </main>
-    </div>
+        <div className="lg:hidden">
+          <div className="flex">
+            <div className="grow px-4 sm:px-6">
+              <div className="w-fit mx-auto space-y-6 mt-16 sm:mt-32 text-xs sm:text-lg text-center text-glow">
+                <p>
+                  <span className="text-nowrap">Interest in building reliable, </span>
+                  <wbr/>
+                  <span className="text-nowrap">efficient software.</span>
+                </p>
+                <p><span className="text-nowrap">Love practicing </span><wbr/><span className="text-nowrap">competitive programming.</span></p>
+              </div>
+              <div className="mt-14 sm:mt-32">
+                <LinkContainer/>
+              </div>
+            </div>
+            <div className="w-[40vw] h-[300px] sm:w-[40vw] sm:h-[500px] relative shrink-0 overflow-hidden rounded-3xl sm:rounded-[4rem]">
+              <Image
+                alt="profile"
+                src={'/img/prof.jpg'}
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <Projects/>
+      <DSA/>
+      <Contact/>
+      <div className="w-fit mx-auto text-center mb-12 mt-20">
+        <p>©KimNattanan</p>
+      </div>
+    </>
   );
 }
