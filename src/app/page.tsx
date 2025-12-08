@@ -77,7 +77,7 @@ export default function Home() {
           <div className="text-sm leading-4 sm:text-base text-center sm:mt-2 lg:text-xl font-bold text-blue1 text-glow">
             Computer Engineering student at <span className=" text-nowrap">Chulalongkorn University</span>
           </div>
-          <div className="lg:block hidden font-black mx-auto w-fit text-3xl text-black mt-16 text-glow">I'm Kim</div>
+          <div className="lg:block hidden font-black mx-auto w-fit text-3xl text-black mt-16 text-glow">{`I'm Kim`}</div>
           <div className="hidden lg:block w-fit mx-auto space-y-2 mt-6 text-lg text-center text-glow">
             <p>Interest in building reliable, efficient software.</p>
             <p>Love practicing competitive programming.</p>
@@ -96,7 +96,7 @@ export default function Home() {
         <div className="lg:hidden">
           <div className="flex">
             <div className="grow px-4 sm:px-6">
-              <div className="font-black mx-auto w-fit text-2xl text-black mt-10 sm:mt-20 sm:text-3xl text-glow">I'm Kim</div>
+              <div className="font-black mx-auto w-fit text-2xl text-black mt-10 sm:mt-20 sm:text-3xl text-glow">{`I'm Kim`}</div>
               <div className="w-fit mx-auto space-y-6 mt-12 text-xs sm:text-lg text-center text-glow">
                 <p>
                   <span className="text-nowrap">Interest in building reliable, </span>
