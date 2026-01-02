@@ -1,3 +1,5 @@
+import CfRatingSpan from "./CfRatingSpan";
+
 export default function DSA(){
   return (
     <div id="dsa" className="lg:mt-0 mt-20">
@@ -28,7 +30,8 @@ export default function DSA(){
             </a>
             <div className="self-center mt-6 sm:mt-0 sm:ml-6 font-medium text-lg sm:font-bold sm:text-xl">
               <p>Username: <span className="font-medium underline text-blue2 hover:opacity-50"><a href="https://codeforces.com/profile/kimnattanan" target="_blank">kimnattanan</a></span></p>
-              <p>Highest Rating: <span className="text-[#00f]">1859</span></p>
+              {/* <p>Highest Rating: <span className="text-[#00f]"></span></p> */}
+              <p>Highest Rating: <CfRatingSpan/></p>
             </div>
           </div>
           <div className="flex flex-col sm:flex-row py-6 border-b border-dashed border-background2">

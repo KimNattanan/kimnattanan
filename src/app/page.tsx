@@ -1,5 +1,5 @@
 import Contact from "@/components/Contact";
-import DSA from "@/components/DSA";
+import DSA from "@/components/dsa/DSA";
 import Projects from "@/components/Projects";
 import Image from "next/image";
 import Link from "next/link";
