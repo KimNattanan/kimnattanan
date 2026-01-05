@@ -1,6 +1,7 @@
 import Contact from "@/components/Contact";
 import DSA from "@/components/dsa/DSA";
 import Projects from "@/components/Projects";
+import Work from "@/components/Work";
 import Image from "next/image";
 import Link from "next/link";
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
@@ -120,6 +121,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Work/>
       <Projects/>
       <DSA/>
       <Contact/>
