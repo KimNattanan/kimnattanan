@@ -21,7 +21,7 @@ export default function Projects(){
           PROJECTS
         </div>
         <div className="lg:grid lg:grid-cols-2">
-          <div className='relative sm:w-[414px] mx-auto self-end'>
+          <div className='relative sm:w-[414px] mx-auto self-center'>
             <div className='flex py-10 sm:px-10'>
               <Image
                 src={"/img/projects/exprec-thumb.png"}
@@ -37,7 +37,7 @@ export default function Projects(){
                 Exprec - Expense Tracking Website
               </div>
               <div className='mt-2 text-base'>
-                A simple website for tracking expenses and see summary dashboard. Making the expense noting easier by making templates of price and category.
+                A simple expense-tracking web application with a summary dashboard. Built with Next.js for the frontend and a Go backend using <span className="text-red2 font-bold">Fiber v2</span> and GORM.
               </div>
               <div className="flex mt-4 flex-wrap">
                 <SkillTag title="Next.js"/>
@@ -59,7 +59,7 @@ export default function Projects(){
             </div>
           </div>
           <div className="block lg:hidden sm:mx-12 border-b-2 border-dotted"></div>
-          <div className='relative sm:w-[414px] mx-auto self-end'>
+          <div className='relative sm:w-[414px] mx-auto self-center'>
             <div className='flex p-10'>
               <Image
                 src={"/img/projects/go-user-service-thumb.png"}
@@ -75,13 +75,11 @@ export default function Projects(){
                 Clean Go User Service
               </div>
               <div className='mt-2 text-base'>
-                A Go-based User Service designed with Clean Architecture, integrating the
-                <span className="text-red2 font-bold">{` Gorilla `}</span>
-                framework, Google OAuth2 authentication, and a robust token management system.
+                A Go-based user service built with Clean Architecture, featuring Google OAuth2 authentication, PostgreSQL persistence, and secure JWT access and refresh tokens with rotation, exposed via RESTful APIs using <span className="text-red2 font-bold">{`Gorilla Mux`}</span>.
               </div>
               <div className="flex mt-4 flex-wrap">
                 <SkillTag title="GO"/>
-                <SkillTag title="Gorilla"/>
+                <SkillTag title="Gorilla Mux"/>
                 <SkillTag title="GORM"/>
                 <SkillTag title="PostgreSQL"/>
                 <SkillTag title="Redis"/>
@@ -98,7 +96,7 @@ export default function Projects(){
           </div>
           <div className="sm:mx-12 border-b-2 border-dotted"></div>
           <div className="hidden lg:block sm:mx-12 border-b-2 border-dotted"></div>
-          <div className='relative sm:w-[414px] mx-auto self-end'>
+          <div className='relative sm:w-[414px] mx-auto self-center'>
             <div className='flex p-10'>
               <Image
                 src={"/img/projects/codeforces.webp"}
