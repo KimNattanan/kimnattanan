@@ -32,7 +32,7 @@ export default function Work(){
               </div>
               <div className='mt-2 text-base'>
                 Contributed to backend development of a Learning Management System(LMS).
-                Implemented RESTful APIs using <span className="text-red2 font-bold">Java</span> and <span className="text-red2 font-bold">Spring Boot</span>.
+                Implemented RESTful APIs, role-based access control, and course management features using <span className="text-red2 font-bold">Java</span> and <span className="text-red2 font-bold">Spring Boot</span>.
               </div>
             </div>
           </div>
