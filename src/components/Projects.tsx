@@ -127,6 +127,45 @@ export default function Projects(){
             </div>
           </div>
           <div className="block lg:hidden mx-12 border-b-2 border-dotted"></div>
+          <div className='relative sm:w-[414px] mx-auto self-center'>
+            <div className='flex p-10'>
+              <Image
+                src={"/img/projects/go-chat-backend-thumb.png"}
+                width={256}
+                height={256}
+                alt="codeforces"
+                style={{ objectFit: "contain" }}
+                className='w-full h-full border-black'
+              />
+            </div>
+            <div className="bg-white py-6 px-8 mb-4 rounded-md border border-stone-200">
+              <div className='text-xl font-bold text-center'>
+                go-chat-backend
+              </div>
+              <div className='mt-2 text-base'>
+              Chat backend implemented in Go, following a modular monolith architecture with support for REST, gRPC, WebSocket APIs, and RabbitMQ-based messaging.
+              </div>
+              <div className="flex mt-4 flex-wrap">
+                <SkillTag title="in-progress" color="#af7e00"/>
+                <SkillTag title="Go"/>
+                <SkillTag title="Echo"/>
+                <SkillTag title="gRPC"/>
+                <SkillTag title="WebSocket"/>
+                <SkillTag title="RabbitMQ"/>
+                <SkillTag title="Postgres"/>
+                <SkillTag title="GORM"/>
+                <SkillTag title="Redis"/>
+                <SkillTag title="Docker"/>
+              </div>
+              <div className='mt-4 flex justify-center text-sm font-semibold text-blue2'>
+                <Link href={"https://github.com/KimNattanan/go-chat-backend"} target='_blank'>
+                  <div className='w-fit underline underline-offset-2 cursor-pointer hover:opacity-50'>
+                    Learn more
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
