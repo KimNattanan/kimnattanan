@@ -90,7 +90,7 @@ export default function Home() {
         <div className="hidden lg:block aspect-9/16 h-[calc(100vh-5rem)] mx-auto relative shrink-0 overflow-hidden rounded-[4rem]">
           <Image
             alt="profile"
-            src={'/img/prof.JPG'}
+            src={'/img/prof.jpg'}
             fill
             style={{
               objectFit: 'cover',
@@ -116,7 +116,7 @@ export default function Home() {
             <div className="w-[40vw] h-[300px] sm:w-[40vw] sm:h-[500px] relative shrink-0 overflow-hidden rounded-3xl sm:rounded-[4rem]">
               <Image
                 alt="profile"
-                src={'/img/prof.JPG'}
+                src={'/img/prof.jpg'}
                 fill
                 className="object-cover"
               />
