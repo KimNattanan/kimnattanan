@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Work(){
   return (
-    <div id="projects" className="lg:mt-0 mt-20">
+    <div id="work" className="lg:mt-0 mt-20">
       <div className="h-20 lg:block hidden"></div>
       <div className="bg-white/66 w-full rounded-[4rem] sm:rounded-[8rem] px-12 pb-20">
         <div className="topic">

@@ -31,6 +31,7 @@ function MiniMenu(){
           style={isOpen?{}:{transform: 'translateY(-50px)'}}
         >
           <MiniMenuBtn title="ABOUT" href="/#about" setIsOpen={setIsOpen}/>
+          <MiniMenuBtn title="WORK" href="/#work" setIsOpen={setIsOpen}/>
           <MiniMenuBtn title="PROJECTS" href="/#projects" setIsOpen={setIsOpen}/>
           <MiniMenuBtn title="DSA" href="/#dsa" setIsOpen={setIsOpen}/>
           <MiniMenuBtn title="CONTACT" href="/#contact" setIsOpen={setIsOpen}/>
@@ -63,7 +64,7 @@ function MiniMenu(){
 
 function NavBtn({title, href, target}:{title: string, href: string, target?: string}) {
   return (
-    <div className="cursor-pointer hover:opacity-50 text-black mx-6 lg:mx-12 lg:text-lg xl:text-xl">
+    <div className="cursor-pointer hover:opacity-50 text-black mx-auto xl:mx-12 lg:text-lg xl:text-xl">
       <Link href={href} target={target||""}>
         {title}
       </Link>
@@ -111,6 +112,7 @@ export default function NavBar() {
         </div>
         <div className="h-full grow flex items-center justify-end">
           <NavBtn title="ABOUT" href="/#about"/>
+          <NavBtn title="WORK" href="/#work"/>
           <NavBtn title="PROJECTS" href="/#projects"/>
           <NavBtn title="DSA" href="/#dsa"/>
           <NavBtn title="CONTACT" href="/#contact"/>

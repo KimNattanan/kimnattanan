@@ -129,7 +129,7 @@ export default function Home() {
       <DSA/>
       <Contact/>
       <div className="w-fit mx-auto text-center mb-12 mt-20">
-        <p>©KimNattanan</p>
+        <p>© KimNattanan</p>
       </div>
     </>
   );
