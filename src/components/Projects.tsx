@@ -56,15 +56,14 @@ function ProjectGoChatBackend(){
           Chat backend implemented in Go, following a modular monolith architecture with support for REST using <span className="text-red2 font-bold">{`Echo`}</span> framework, gRPC, WebSocket APIs, and RabbitMQ-based messaging.
         </div>
         <div className="flex mt-4 flex-wrap">
-          <SkillTag title="in-progress" color="#af7e00"/>
           <SkillTag title="Go"/>
           <SkillTag title="Echo"/>
           <SkillTag title="gRPC"/>
           <SkillTag title="WebSocket"/>
           <SkillTag title="RabbitMQ"/>
+          <SkillTag title="Redis"/>
           <SkillTag title="Postgres"/>
           <SkillTag title="GORM"/>
-          <SkillTag title="Redis"/>
           <SkillTag title="Docker"/>
         </div>
         <div className='mt-4 flex justify-center text-sm font-semibold text-blue2'>
