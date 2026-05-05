@@ -31,8 +31,7 @@ export default function Work(){
                 Senior Backend Developer
               </div>
               <div className='mt-2 text-base'>
-                Contributed to backend development of a Learning Management System(LMS).
-                Implemented RESTful APIs, role-based access control, and course management features using <span className="text-red2 font-bold">Java</span> and <span className="text-red2 font-bold">Spring Boot</span>.
+                Led backend development of a Learning Management System using <span className="text-red2 font-bold">Java</span> and <span className="text-red2 font-bold">Spring Boot</span>, designing RESTful APIs, role-based access control, and course management modules for a platform used by approximately 500 users.
               </div>
             </div>
           </div>
