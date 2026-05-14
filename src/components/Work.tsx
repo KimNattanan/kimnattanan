@@ -60,7 +60,7 @@ function PosnBuuTA(){
         <div className="mb-4 relative flex w-full">
           <div
             className='h-[256px] aspect-3/4 mx-auto absolute inset-0 my-auto'
-            style={imageToggle ? {opacity: "0%"} : {opacity: "100%"}}
+            style={imageToggle ? {opacity: "0%", zIndex: "-10"} : {opacity: "100%", zIndex: "20"}}
           >
             <Image
               src={"/img/work/posnbuuta1.png"}
@@ -73,7 +73,7 @@ function PosnBuuTA(){
           </div>
           <div
             className='h-[256px] aspect-square mx-auto'
-            style={imageToggle ? {opacity: "100%"} : {opacity: "0%"}}
+            style={imageToggle ? {opacity: "100%", zIndex: "20"} : {opacity: "0%", zIndex: "-10"}}
           >
             <Image
               src={"/img/work/posnbuuta2.jpg"}
@@ -86,8 +86,8 @@ function PosnBuuTA(){
           </div>
         </div>
         <div
-          className='h-[100px] aspect-square self-end right-0 mr-8 absolute opacity-100 z-20 cursor-pointer'
-          style={imageToggle ? {opacity: "0%"} : {opacity: "100%"}}
+          className='h-[100px] aspect-square self-end right-0 mr-8 absolute opacity-100 cursor-pointer'
+          style={imageToggle ? {opacity: "0%", zIndex: "30"} : {opacity: "100%", zIndex: "40"}}
           onClick={()=>setImageToggle(!imageToggle)}
         >
           <Image
@@ -100,8 +100,9 @@ function PosnBuuTA(){
           />
         </div>
         <div
-          className='h-[100px] aspect-square self-end right-0 mr-8 absolute opacity-100 z-10'
-          style={imageToggle ? {opacity: "100%"} : {opacity: "0%"}}
+          className='h-[100px] aspect-square self-end right-0 mr-8 absolute opacity-100 cursor-pointer'
+          style={imageToggle ? {opacity: "100%", zIndex: "40"} : {opacity: "0%", zIndex: "30"}}
+          onClick={()=>setImageToggle(!imageToggle)}
         >
           <Image
             src={"/img/work/posnbuuta1.png"}
